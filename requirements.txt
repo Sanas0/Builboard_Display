@@ -9,6 +9,7 @@ decorator==4.4.2
 ez-setup==0.9
 Flask==2.0.2
 Flask-MySQLdb==0.2.0
+gunicorn==20.1.0
 idna==3.3
 imageio==2.15.0
 imageio-ffmpeg==0.4.5
@@ -33,6 +34,7 @@ pickleshare==0.7.5
 Pillow==9.0.1
 proglog==0.1.9
 prompt-toolkit==3.0.18
+psycopg2==2.9.3
 pycparser==2.21
 Pygments==2.9.0
 pymediainfo==5.1.0
