@@ -1,0 +1,28 @@
+{% extends 'layoutAdmin.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+    <div style=" background: #181015 url(/static/bg_header.jpg) no-repeat;
+        background-size: cover;
+        min-height: 520px;
+        text-align: center;
+        padding-top: 240px;
+        color: white;
+        font-family: Open sans, Helvetica, Arial;
+        font-weight: 300;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h1 style="text-align: center;" class="lead">BUILLBOARD DISPLAY</h1>
+                        {% if session['Id_User'] %}
+                        <h4 style="text-align: center;" >Welcome {{ session['Nom'] }}</h4>
+                        <p class="tagline">shows varying imagery and text created from computer programs and software </p>
+                        {% else %} 
+                        <h4 style="text-align: center;" >Not login</h4>
+                        <p class="tagline">shows varying imagery and text created from computer programs and software </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+    </div>
+
+{% endblock %}

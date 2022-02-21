@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pub - Buillboard Display</title>
+	    <link rel="shortcut icon" href="static/gt_favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    </head>
+ 
+    <body style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1.428571429;
+            color: #333;">
+        <div class="navbar navbar-inverse navbar-fixed-top headroom">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">PUB</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        {% if session['Id_User'] %}
+                            <li>
+                                <a href="/pubs">Pub</a>
+                            </li>
+                            <li>
+                                <a href="/msgs">Message</a>
+                            </li>
+                            <li>
+                                <a href="/logout">Logout</a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="/login">Login</a>
+                            </li>
+                            <li>
+                                <a href="/register">Register</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br>
+        <header>
+        {% block content %} {% endblock %}
+        </header>
+
+        <div class="container text-center">
+            <br> <br>
+            <h2 class="thin">Billboards and displays for brand promotion</h2>
+            <p class="text-muted">
+                Billboard advertisements are designed to catch a person's attention and create 
+                a memorable impression very quickly, leaving the reader thinking about the advertisement after they have driven past it.
+            </p>
+        </div>
+
+        <footer id="footer" style="margin-top: 60px;">
+
+            <div style="background: #232323;
+                    padding: 30px 0 0 0;
+                    font-size: 12px;
+                    color: #999;">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-3 widget">
+                            <h3 class="widget-title">Contact</h3>
+                            <div class="widget-body">
+                                <p>+216 00 000 000<br>
+                                    <a href="mailto:#">buillboard.display@gmail.com</a><br>
+                                    <br>
+                                    Tunis, Ariana, TN 37015
+                                </p>	
+                            </div>
+                        </div>
+    
+                        <div class="col-md-3 widget">
+                            <h3 class="widget-title">Follow us</h3>
+                            <div class="widget-body">
+                                <p class="follow-me-icons">
+                                    <a href=""><i style="content: \f09a; box-sizing: border-box;"></i></a>
+                                    <a href=""><i style="content: \f09b; box-sizing: border-box;"></i></a>
+                                    <a href=""><i style="content: \f17d; box-sizing: border-box;"></i></a>
+                                    <a href=""><i style="content: \f099; box-sizing: border-box;"></i></a>
+                                </p>	
+                            </div>
+                        </div>
+    
+                        <div class="col-md-6 widget">
+                            <h3 class="widget-title">Can you put whatever you want on a billboard?</h3>
+                            <div class="widget-body">
+                                <p>Some areas they tend to be sensitive to include extreme politics, overly sexual content or nudity, endorsement of illegal activities, curse words, and guns. Keep in mind that while you do have your First Amendment right to free speech, you don't have a right to place your message on a billboard.</p>
+                                <p>If your message is deemed too offensive, billboard companies are generally open to working with you to come up with something they are comfortable with posting. </p>
+                            </div>
+                        </div>
+    
+                    </div> <!-- /row of widgets -->
+                </div>
+            </div>
+    
+            <div style="background: #191919;
+            padding: 15px 0;
+            color: #777;
+            font-size: 12px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 widget">
+                            <div class="widget-body">
+                                <p class="simplenav">
+                                    <a href="">Home</a> | 
+                                    <a href="">About</a> |
+                                    <a href="">Sidebar</a> |
+                                    <a href="">Contact</a> |
+                                    <b><a href="/register">Sign up</a></b>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-6 widget">
+                            <div class="widget-body">
+                                <p class="text-right">
+                                    Copyright &copy; 2022, Buillboard Display</a> 
+                                </p>
+                            </div>
+                        </div>
+    
+                    </div> <!-- /row of widgets -->
+                </div>
+            </div>
+        </footer>	
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+<title>Pub</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"/>
+{% block content %}
+
+<div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
+
+    <div class="card">
+        <div class="card-header p-4">
+            <img src="/static/gt_favicon.png" alt="Your Image" width="28" height="28" />
+            <div class="float-right">
+                <h3 class="mb-0">id facture</h3>
+                Date: 
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-sm-6">
+                    <h5 class="mb-3">From:</h5>
+                    <h3 class="text-dark mb-1">Billboard Display</h3>
+                    <div>D47, ESPRIT</div>
+                    <div>Email: buillboard.display@gmail.com </div>
+                    <div>Phone: +216 00 000 000</div>
+                </div>
+                {% for ln in users %}
+                <div class="col-sm-6 ">
+                    <h5 class="mb-3">To:</h5>
+                    <h3 class="text-dark mb-1">{{ln.1}}</h3>
+                    <div>Email: {{ln.2}}</div>
+                    <div>Phone: +216 00 000 000</div>
+                </div>
+                {%endfor%}
+            </div>
+            <div class="table-responsive-sm">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="center">#</th>
+                            <th>Pub</th>
+                            <th class="right">Price</th>
+                            <th class="center">Dayes</th>
+                            <th class="right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        {% for row in prices %}
+                        <tr>
+                            <td class="center">{{row.0}}</td>
+                            <td class="left strong">{{row.5}}</td>
+                            <td class="right">{{row.2}}</td>
+                            <td class="center">{{row.1}}</td>
+                            <td class="right">{{row.3}}</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-5">
+                </div>
+                <div class="col-lg-4 col-sm-5 ml-auto">
+                    <table class="table table-clear">
+                        <tbody>
+                            <tr>
+                                <td class="left">
+                                    <strong class="text-dark">Total</strong> </td>
+                                <td class="right">
+                                    <strong class="text-dark">{{somme}}</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-white">
+        </div>
+    </div>
+</div>
+<br><hr><br>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+<title>Register</title>
+{% block content %}
+<br><br>
+<hr><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="thin text-center">Register a new account</h3>
+                        <hr>
+                        <form action="/register" method="POST">
+                            <div class="form-group">
+                                <label>Name<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="Nom" required="1">
+                            </div>
+                            <div class="top-margin">
+                                <label>Email Address<span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" name="Email" required="1">
+                            </div>
+                            <div class="top-margin">
+                                <label>Password<span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" name="Password" required="1">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-8"></div>
+                            <div class="col-lg-4 text-right">
+                                <button style="padding: 10px 40px;
+                                    font-weight: bold;
+                                    border-radius: 3px;
+                                    display: inline-block;
+                                    margin-bottom: 0;
+                                    text-align: center;
+                                    vertical-align: middle;
+                                    cursor: pointer;
+                                    font-size: 14px;
+                                    line-height: 1.428571429;
+                                    white-space: nowrap;
+                                    background-image: linear-gradient(to bottom, #FF9B22 0%, #FF8C00 100%);
+                                    color: #FFEFD7;
+                                    background-repeat: repeat-x;
+                                    border: 0 none;">
+                                Register</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+{% endblock %}
